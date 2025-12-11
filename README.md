@@ -82,7 +82,8 @@ project/
 │   └── scraper.py           # 家樂福爬蟲
 ├── ingredients_dict.json    # 食材翻譯快取
 ├── requirements.txt         # 依賴套件列表
-└── README.md                # 專案說明文件```
+└── README.md                # 專案說明文件
+```
 
 ### 核心模組說明
 
