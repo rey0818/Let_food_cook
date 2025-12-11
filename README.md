@@ -139,6 +139,7 @@ pip install -r requirements.txt
 - **google-generativeai** - Gemini AI API
 - **scikit-learn** - 機器學習（相似度計算）
 - **numpy** - 數值計算
+- **tabulate** - 表格格式化顯示
 
 #### 步驟 3：驗證安裝
 ```powershell
