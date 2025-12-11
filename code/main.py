@@ -76,7 +76,7 @@ if search_btn:
                     cost = 0
                     shopping_list = []
                     progress_bar = st.progress(0)
-                    len = len(miss)
+                    total = len(miss)
                     for id, item in enumerate(miss):
                         eng_name = item['name']
                         keyword = translation_map.get(eng_name, eng_name)
@@ -112,7 +112,7 @@ if search_btn:
                                 "預估價格": "-"
                             })
                         
-                        progress_bar.progress((id + 1) / len)
+                        progress_bar.progress((id + 1) / total)
                     if shopping_list:
                         st.markdown(pd.DataFrame(shopping_list).to_markdown(index=False))
                         st.success(f"💰 補齊食材預估總價: NT$ {cost}")
