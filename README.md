@@ -1,6 +1,6 @@
 # 🍽️ 智慧廚房助手 - 食材Magic
 
-一個結合 AI 技術的智慧食譜搜尋系統，幫助用戶根據現有食材找到合適的食譜，並提供中文翻譯、營養分析和家樂福商品比價功能。
+一個結合 AI 技術的智慧食譜搜尋系統，為所有使用者根據現有食材找到合適的食譜，並提供中文翻譯、營養分析和家樂福商品比價功能。無需編程經驗，任何人都可以輕鬆使用。
 
 ## 📋 專案簡介
 
@@ -111,31 +111,40 @@ final_project_ICP/
 
 ## 📦 需要安裝的套件
 
-### 1️⃣ Python 環境
-- Python 3.8 或以上版本
+### 1️⃣ 系統需求
+- **Python 3.8 或以上版本** - [下載 Python](https://www.python.org/downloads/)
+- **網際網路連線** - 用於 API 呼叫和網路爬蟲
 
-### 2️⃣ 必要套件
+### 2️⃣ 安裝步驟
 
-建立 `requirements.txt` 檔案：
-```txt
-streamlit>=1.28.0
-pandas>=2.0.0
-requests>=2.31.0
-beautifulsoup4>=4.12.0
-google-generativeai>=0.3.0
-scikit-learn>=1.3.0
-numpy>=1.24.0
+#### 步驟 1：複製專案
+```powershell
+# 複製此專案到你的電腦
+git clone https://github.com/[your-username]/Let_food_cook.git
+cd Let_food_cook
 ```
 
-### 安裝指令
+#### 步驟 2：安裝依賴套件
+專案已準備好 `requirements.txt` 檔案，包含所有必要套件：
+
 ```powershell
 pip install -r requirements.txt
 ```
 
-或手動安裝：
+完成後會自動安裝以下套件：
+- **streamlit** - 使用者介面框架
+- **pandas** - 資料處理
+- **requests** - HTTP 請求
+- **beautifulsoup4** - 網頁爬蟲
+- **google-generativeai** - Gemini AI API
+- **scikit-learn** - 機器學習（相似度計算）
+- **numpy** - 數值計算
+
+#### 步驟 3：驗證安裝
 ```powershell
-pip install streamlit pandas requests beautifulsoup4 google-generativeai scikit-learn numpy
+pip list
 ```
+確認所有套件都已安裝。
 
 ---
 
@@ -154,65 +163,114 @@ pip install streamlit pandas requests beautifulsoup4 google-generativeai scikit-
 
 ---
 
-## 🚀 如何執行
+## 🚀 快速開始
 
-### 1️⃣ 安裝套件
+### 1️⃣ 準備 API 金鑰（5 分鐘）
+
+**Spoonacular API 金鑰：**
+1. 前往 [Spoonacular API 官網](https://spoonacular.com/food-api)
+2. 點擊「Get API Key」並註冊免費帳號
+3. 確認電子郵件後，複製你的 API Key
+4. 免費版每日可使用 150 次請求
+
+**Google Gemini API 金鑰：**
+1. 前往 [Google AI Studio](https://aistudio.google.com/)
+2. 登入你的 Google 帳號（或建立新帳號）
+3. 點擊「Create API Key」
+4. 複製 API Key（免費版無日限制，但有配額限制）
+
+### 2️⃣ 執行應用程式
+
+#### Windows 使用者：
 ```powershell
-pip install -r requirements.txt
+# 進入專案資料夾
+cd Let_food_cook
+
+# 啟動應用程式
+streamlit run code/main.py
 ```
 
-### 2️⃣ 執行程式
-```powershell
-cd c:\Users\user\Desktop\final_project_ICP\core
-streamlit run main.py
+#### Mac/Linux 使用者：
+```bash
+cd Let_food_cook
+streamlit run code/main.py
 ```
 
-### 3️⃣ 使用系統
-1. 在瀏覽器開啟 `http://localhost:8501`
-2. 在側邊欄輸入 API Keys
-3. 輸入食材（英文，用逗號分隔）
-4. 選擇過敏原篩選（可選）
-5. 點擊「🔍 搜尋食譜」
-6. 查看結果和採購建議
+應用程式會自動在瀏覽器開啟：`http://localhost:8501`
+
+### 3️⃣ 使用應用程式
+
+1. **在左側欄輸入 API 金鑰：**
+   - 貼上 Spoonacular API Key
+   - 貼上 Gemini API Key
+
+2. **輸入食材：**
+   - 英文食材名稱，用逗號分隔
+   - 例：`Chicken, Tomato, Garlic, Pasta`
+
+3. **（可選）設定過敏原篩選：**
+   - 選擇需要避免的過敏原
+   - 例：Dairy Free, Gluten Free
+
+4. **選擇搜尋數量：**
+   - 1 至 10 個食譜
+
+5. **點擊「🔍 搜尋食譜」按鈕**
+
+6. **查看結果：**
+   - 食譜圖片和中文步驟
+   - 缺漏食材的家樂福購物推薦
+   - 預估採購總價
+   - 營養成分分析
 
 ---
 
 ## 💡 使用範例
 
-### 輸入
-```
-食材: Chicken, Tomato, Pasta
-過敏原: Dairy Free
-搜尋數量: 2
-```
+### 場景：尋找簡單的義大利麵食譜
 
-### 輸出
-- 2 個符合條件的食譜
-- 每個食譜包含：
-  - 食譜圖片
-  - 翻譯後的中文步驟
-  - 缺漏食材的家樂福商品推薦
-  - 營養成分圖表
+**輸入內容：**
+- 食材：`Chicken, Tomato, Pasta, Garlic, Olive Oil`
+- 過敏原：`Dairy Free`（避免乳製品）
+- 搜尋數量：`3`
+
+**系統會為你：**
+- 🔍 搜尋 3 個符合條件的食譜
+- 📝 自動翻譯所有食譜步驟為繁體中文
+- 🛒 在家樂福搜尋缺漏食材（例：鹽、黑胡椒）
+- 💰 計算採購總價
+- 📊 顯示每個食譜的營養成分
 
 ---
 
-## ⚠️ 注意事項
+## ⚠️ 常見問題
 
-### API 使用限制
-- **Spoonacular**: 免費版每日 150 次請求
-- **Gemini**: 免費版有每日配額限制
+### Q1: 執行時顯示「ModuleNotFoundError」
+**A:** 表示套件未安裝。請執行：
+```powershell
+pip install -r requirements.txt
+```
 
-### 網路爬蟲
-- 家樂福網站結構可能變動
-- 建議定期檢查 `scraper.py` 的解析邏輯
+### Q2: 獲得免費 API 金鑰後無法使用
+**A:** 
+- Spoonacular 需要 24 小時才能啟用免費版
+- Gemini API 金鑰需要確認已啟用
 
-### 資料快取
-- `ingredients_dict.json` 儲存已翻譯的食材
-- 可手動編輯調整翻譯結果
+### Q3: 家樂福搜尋沒有結果
+**A:** 
+- 家樂福可能沒有該商品
+- 網站結構可能已變動，請聯絡開發者報告
 
-### 相似度閾值
-- 目前設定為 0.45
-- 可在 `translation.py` 的 `choose_best()` 函式中調整
+### Q4: Gemini 翻譯不準確
+**A:** 
+- 食材可編輯 `ingredients_dict.json` 手動調整
+- 可試試不同的食材名稱英文版本
+
+### Q5: 應用程式很慢
+**A:** 
+- 首次執行需要下載 AI 模型
+- 網路搜尋耗時較久
+- 請耐心等待進度條完成
 
 ---
 
@@ -235,11 +293,14 @@ streamlit run main.py
 
 ## 👥 貢獻者
 
-- 專案開發：[zih-ruei huang]
+- 專案開發者：[Zih-Ruei Huang]
 - 最後更新：2025年12月11日
 
 ---
 
-## 📞 聯絡方式
+## 📞 獲得幫助
 
-如有問題或建議，請聯絡：[rey.gaming.0818@gmail.com]
+遇到問題嗎？
+- 📧 電郵聯絡：[rey.gaming.0818@gmail.com]
+- 🐛 提交 Bug 報告
+- 💡 分享建議和改進想法
