@@ -82,7 +82,6 @@ if search_btn:
                         match = choose_best(
                             eng_name, 
                             options, 
-                            allergies=allergies
                         )
 
                         if match:

@@ -133,11 +133,9 @@ def translate_recipes_steps(recipes):
         print(f"步驟翻譯中的Gemini錯誤: {x}")
         return {}
 
-def choose_best(origin, option,allergies=None):
+def choose_best(origin, option):
     if not option:
         return None
-    if allergies is None:
-        allergies = []
     try:
         texts = [origin] + [item['title'] for item in option]
         result = genai.embed_content(
@@ -155,6 +153,6 @@ def choose_best(origin, option,allergies=None):
             print("相似度太低，無法匹配")
             return None
         return option[id]
-    except Exception as e:
-        print(f"Gemini無法embedding:{e}")
+    except Exception as x:
+        print(f"Gemini無法embedding:{x}")
         return option[0] if option else None
