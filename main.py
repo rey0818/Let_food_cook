@@ -12,7 +12,7 @@ with st.sidebar:
     ingredients = st.text_area("輸入食材(英文, 用逗號分隔)", "Chicken, Tomato, Pasta")
     allergies = st.multiselect(
         "過敏原篩選",
-        options=["Gluten Free", "Dairy Free", "Peanut Free", "Seafood Free", "Soy Free", "Vegetarian", "Vegan"]
+        options=["Gluten Free", "Dairy Free", "Peanut Free", "Seafood Free", "Soy Free"]
     )
     limit = st.number_input("搜尋食譜數量(1-10)", min_value=1, max_value=10, value=2)
     search_btn = st.button("🔍 搜尋食譜", type="primary")
