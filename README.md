@@ -121,7 +121,7 @@ project/
 #### 步驟 1：複製專案
 ```powershell
 # 複製此專案到你的電腦
-git clone https://github.com/[your-username]/Let_food_cook.git
+git clone https://github.com/[rey0818]/Let_food_cook.git
 cd Let_food_cook
 ```
 
@@ -150,21 +150,6 @@ pip list
 
 ---
 
-## 🔑 API 金鑰申請
-
-### Spoonacular API
-1. 前往 [Spoonacular API](https://spoonacular.com/food-api)
-2. 註冊免費帳號
-3. 取得 API Key（免費版每日 150 次請求）
-
-### Google Gemini API
-1. 前往 [Google AI Studio](https://aistudio.google.com/)
-2. 登入 Google 帳號
-3. 建立 API Key
-4. 選擇 `gemini-2.5-flash-lite` 模型（免費版）
-
----
-
 ## 🚀 快速開始
 
 ### 1️⃣ 準備 API 金鑰（5 分鐘）
@@ -179,7 +164,7 @@ pip list
 1. 前往 [Google AI Studio](https://aistudio.google.com/)
 2. 登入你的 Google 帳號（或建立新帳號）
 3. 點擊「Create API Key」
-4. 複製 API Key（免費版無日限制，但有配額限制）
+4. 複製 API Key（免費版有配額限制）
 
 ### 2️⃣ 執行應用程式
 

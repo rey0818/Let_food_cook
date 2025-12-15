@@ -55,11 +55,9 @@ if search_btn:
                     if steps:
                         translated_steps = translated_steps_dict.get(str(recipe_idx))
                         if translated_steps:
-                            st.write("✅已翻譯成中文步驟：")
                             for i, step in enumerate(translated_steps, 1):
                                 st.write(f"**{i}.** {step}")
                         else:
-                            st.write("⚠️翻譯失敗，顯示原英文步驟：")
                             for i, step in enumerate(steps, 1):
                                 st.write(f"**{i}.** {step}")
                     else:
