@@ -120,7 +120,7 @@ project/
 #### 步驟 1：複製專案
 ```powershell
 # 複製此專案到你的電腦
-git clone https://github.com/[rey0818]/Let_food_cook.git
+git clone https://github.com/rey0818/Let_food_cook.git
 cd Let_food_cook
 ```
 
