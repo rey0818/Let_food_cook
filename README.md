@@ -75,11 +75,10 @@ https://online.carrefour.com.tw/zh/search
 
 ```
 project/
-├── code/
-│   ├── main.py              # Streamlit 主程式
-│   ├── recipe_api.py        # Spoonacular API 介面
-│   ├── translation.py       # Gemini AI 翻譯模組
-│   └── scraper.py           # 家樂福爬蟲
+│── main.py                  # Streamlit 主程式
+│── recipe_api.py            # Spoonacular API 介面
+│── translation.py           # Gemini AI 翻譯模組
+│── scraper.py               # 家樂福爬蟲
 ├── ingredients_dict.json    # 食材翻譯快取
 ├── requirements.txt         # 依賴套件列表
 └── README.md                # 專案說明文件

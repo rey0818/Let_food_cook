@@ -2,7 +2,7 @@ import json
 import google.generativeai as genai
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-path = __file__.replace("translation.py", "../ingredients_dict.json")
+path = __file__.replace("translation.py", "ingredients_dict.json")
 def loading():
     try:
         with open(path, "r", encoding="utf-8") as f:
